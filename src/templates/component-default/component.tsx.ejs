@@ -1,0 +1,26 @@
+import * as React from 'react';
+import { connect } from 'react-redux';
+import * as store from './<%= props.componentName.kebab %>.store';
+
+interface <%= props.componentName.pascal %>ComponentProps {
+	/* YOUR PROPS HERE */
+}
+
+const <%= props.componentName.pascal %>ComponentBase = (props: <%= props.componentName.pascal %>ComponentProps) => (
+	<div>
+		{/* YOUR COMPONENT */}
+	</div>
+);
+
+const withState = connect(
+	state => ({}),
+	store.actions,
+);
+
+const <%= props.componentName.pascal %>Component = withState(<%= props.componentName.pascal %>ComponentBase);
+
+export {
+	<%= props.componentName.pascal %>Component,
+	<%= props.componentName.pascal %>ComponentProps,
+	<%= props.componentName.pascal %>ComponentBase,
+};

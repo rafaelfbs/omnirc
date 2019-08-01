@@ -1,0 +1,47 @@
+const types = {
+    ADD: '@<%= props.componentName.kebab %>/ADD',
+    REMOVE: '@<%= props.componentName.kebab %>/REMOVE',
+};
+
+const actions = {
+	add: () => ({
+		type: types.ADD,
+		payload: { increment: 1 },
+    }),
+    remove: () => ({
+		type: types.REMOVE,
+		payload: { decrement: 1 },
+	}),
+};
+
+const initialState = {
+	val: 0,
+};
+
+const reducer = (state = initialState, action) => {
+	switch (action.type) {
+		case types.ADD:
+			return {
+				...state,
+				val: state.val + action.payload.increment,
+			};
+		case types.REMOVE:
+			return {
+				...state,
+				val: state.val - action.payload.decrement,
+			};
+		default:
+			return state;
+	}
+};
+
+const selectors = {
+	getValue: state => state.val,
+};
+
+export {
+	types,
+	actions,
+	reducer,
+	selectors,
+};

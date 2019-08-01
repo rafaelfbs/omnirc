@@ -1,0 +1,15 @@
+import * as React from 'react';
+import * as renderer from 'react-test-renderer';
+import { <%= props.componentName.pascal %>Component } from './<%= props.componentName.kebab %>.component';
+
+describe('<<%= props.componentName.kebab %>Component />', () => {
+	it('matches snapshot', () => {
+		const tree = renderer
+			.create(
+				<<%= props.componentName.pascal %>Component />,
+			)
+			.toJSON();
+
+		expect(tree).toMatchSnapshot();
+	});
+});

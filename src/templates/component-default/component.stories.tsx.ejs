@@ -1,0 +1,11 @@
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { <%= props.componentName.pascal %>Component } from './<%= props.componentName.kebab %>.component';
+
+const stories = storiesOf('Components', module);
+
+stories.add(
+	'<%= props.componentName.pascal %>Component',
+	() => <<%= props.componentName.pascal %>Component />,
+	{ info: { inline: true } },
+);
